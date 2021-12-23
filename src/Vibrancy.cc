@@ -83,14 +83,9 @@ namespace Vibrancy {
         if (handleBuffer->IsNull())
             return;
 
-        bool toggleState = toggleStateObj->BooleanValue(NULL);
-
         char* bufferData = node::Buffer::Data(handleBuffer);
 
         bool result = false;
-
-        if (!toggleState)
-            result = vibHelper_.DisableVibrancy((unsigned char*)bufferData);
 
         info.GetReturnValue().Set(result);
     }
